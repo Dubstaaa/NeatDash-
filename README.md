@@ -3,8 +3,11 @@ A functional Arduino based oled dashboard for electric scooters like Xiaomi or N
 
 OCCURRENT
 Arduino Board.
+
 0.96" OLED I2C display connected on native SCL and SDA pins of the board. (In Arduino Nano, Uno, Mini, and ProMini are used A5/A4 meanwhile in Mega SCK and SDA)
+
 1N4007 diode
+
 120 OHM resistor
 
 Diode and resistor are needed in order to open an half duplex serial communication with scooter bus.
