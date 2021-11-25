@@ -5,18 +5,27 @@ OCCURRENT
 
 Arduino Board.
 
-0.96" OLED I2C display connected on native SCL and SDA pins of the board. (In Arduino Nano, Uno, Mini, and ProMini are used A5/A4 meanwhile in Mega SCK and SDA)
+128 x64 0.96" OLED I2C display 
 
 1N4007 diode
 
-120 OHM resistor
+120 OHM 0,5w resistor
+
+Wires
+
+Solder and soldering iron
+
 
 
 
 
 Diode and resistor are needed in order to open an half duplex serial communication with scooter bus.
-I supplied the OLED display at 3,3v to avoid external pull up resistors. All works fine, current never raised over the standard draw over 5v.
+
+Display is connected on native SCL and SDA pins of the board. (In Arduino Nano, Uno, Mini, and ProMini are used A5/A4 meanwhile in Mega SCK and SDA). I supplied the OLED at 3,3v to avoid external pull up resistors. All works fine, current never raised over the standard draw over 5v.
 IMPORTANT!! link display VCC to Arduino 5V pin without using an external 150 OHM pull up resistor on data line may cause my watchdog failure!
+
+I had to use a Software port to improve my watchdog reliability, even to avoid conflict between uart and serial programmer integrated in many boards. Available the standard uart version for the PRO MINI, and the SERIAL3 version for the MEGA’s (inteded for debugging).
+ICSP pins are so useful as they links directly to D11 and D12 allowing you to solder the bus wires on the extremity of the board and the R-D series directly through D11 and D12 lateral pins.
 
 Please check your board's icsp header to observe if it's inteded in a forward or reversed pin order (a few replica boards like ELEGOO boards use to flip the pinout on some headers, so pay attention to connect the data pin on D11 and 0V on GND).
 
